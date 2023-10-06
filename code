@@ -1,0 +1,130 @@
+#include <iostream>
+using namespace std;
+
+// array size
+const int FM1_SIZE = 6;
+const int FM2_SIZE = 6;
+const int AM_SIZE = 6;
+const int CD_SIZE = 11;
+
+// declare arrays
+string fm1[FM1_SIZE] = {"(0.) 101.1", "(1.) 102.2", "(2.) 103.3",
+                        "(3.) 104.4", "(4.) 105.5", "(5.) 106.6"},
+       fm2[FM2_SIZE] = {"(0.) 107.7", "(1.) 108.8", "(2.) 109.9",
+                        "(3.) 110.0", "(4). 111.0", "(5.) 112.2"},
+       am[AM_SIZE] = {"(0.) 107.7",  "(1.) 108.8", "(2.) 109.9",
+                      "(3.0) 110.0", "(4.) 111.0", "(5.) 112.2"},
+       cd[CD_SIZE] = {"(0.) hello hello",
+                      "(1.) Agni Parthene",
+                      "(2.) the $",
+                      "(3.) first light",
+                      "(4.) Yellow submarine",
+                      "(5.) Jesus loves the little children",
+                      "(6.) One Night Stand",
+                      "(7.) Tu",
+                      "(8.) Dunkelheit",
+                      "(9.) Born 2 lose",
+                      "(10.) Gangsta Walk"};
+
+int changeradiostation(int station) {
+  cout << "Please Enter The Number Of The Radio Station You Would Like To "
+          "Listen To :"
+       << endl;
+  cin >> station;
+  return station;
+}
+
+int main() {
+
+  int station;
+  int option;
+  int choice;
+
+  while (true) {
+    cout << "\nWelcome Back To 97Z01! Please Select An Option Below :\n"
+         << "\n1. FM1"
+         << "\n2. FM2"
+         << "\n3. AM"
+         << "\n4. CD "
+         << "\n5.SAVE STATIONS"
+         << "\n6.KILL RADIO";
+    cin >> option;
+
+    switch (option)
+
+    {
+    case 1:
+      cout << "\nThe Available FM1 Stations Are:" << endl;
+      for (int i = 0; i < FM1_SIZE; i++) {
+        cout << fm1[i] << endl;
+      }
+      cout << endl;
+
+      station = changeradiostation(station);
+      cout << "You Are Now Listening To Station : " << fm1[station] << endl;
+      cout << "Would you like to save this station?" << endl;
+      cout << "1.Yes || 2. No" << endl;
+      cin >> choice;
+      if (choice == 1)
+        cout << "This Station Has Been Saved." << endl;
+
+      break;
+
+  
+    case 2:
+      cout << "\nThe Available FM2 Stations Are : " << endl;
+      for (int i = 0; i < FM2_SIZE; i++) {
+        cout << fm2[i] << endl;
+      }
+      cout << endl;
+
+      station = changeradiostation(station);
+      cout << "You Are Now Listening To Station : " << fm2[station] << endl;
+      cout << "Would you like to save this station?" << endl;
+      cout << "1.Yes || 2. No" << endl;
+      cin >> choice;
+      if (choice == 1)
+        cout << "This Station Has Been Saved." << endl;
+
+      break;
+
+    // case 3
+    case 3:
+      cout << "\nThe Available AM Stations Are :" << endl;
+      for (int i = 0; i < AM_SIZE; i++) {
+        cout << am[i] << endl;
+      }
+      cout << endl;
+
+      station = changeradiostation(station);
+      cout << "You Are Now Listening To Station" << am[station] << endl;
+      cout << "Would you like to save this station?" << endl;
+      cout << "1.Yes || 2. No" << endl;
+      cin >> choice;
+      if (choice == 1)
+        cout << "This Station Has Been Saved." << endl;
+      break;
+
+   
+    case 4:
+      cout << "\nThe Available CD Stations Are :" << endl;
+      for (int i = 0; i < CD_SIZE; i++) {
+        cout << cd[i] << endl;
+      }
+      cout << endl;
+
+      station = changeradiostation(station);
+      cout << "You Are Now Listening To Station : " << cd[station] << endl;
+      cout << "Would you like to save this station?" << endl;
+      cout << "1.Yes || 2. No" << endl;
+      cin >> choice;
+      if (choice == 1)
+        cout << "This Station Has Been Saved." << endl;
+      break;
+
+    case 6:
+      cout << "\nGOODBYE!" << endl;
+      break;
+    }
+  }
+}
